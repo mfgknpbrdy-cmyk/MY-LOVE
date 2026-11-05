@@ -1,1 +1,185 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(160deg, #100c2c, #38204e, #783c70);
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ffc9ed 1px, transparent 1px);
+  background-size: 55px 55px, 90px 90px;
+  background-position: 0 0, 30px 40px;
+  opacity: .45;
+}
+
+.moon {
+  position: fixed;
+  top: 45px;
+  right: 10%;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #fff0c9;
+  box-shadow: 0 0 35px #ffd9a5, 0 0 90px #f6b8dc;
+}
+
+main {
+  position: relative;
+  width: min(90%, 650px);
+  margin: auto;
+  padding: 75px 0;
+}
+
+h1 {
+  font: 700 clamp(42px, 9vw, 65px) 'Dancing Script', cursive;
+  color: #ffd5ec;
+  text-shadow: 0 0 20px #ff8bd0;
+}
+
+.subtitle { color: #f5d9ef; }
+
+.photo {
+  width: 230px;
+  height: 280px;
+  margin: 35px auto;
+  padding: 12px 12px 35px;
+  background: #fff8f5;
+  color: #7a4269;
+  transform: rotate(-3deg);
+  box-shadow: 0 0 35px #ffb5df55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.photo span { max-width: 180px; }
+
+.card {
+  margin-top: 35px;
+  padding: 28px;
+  border: 1px solid #ffffff35;
+  border-radius: 22px;
+  background: #ffffff12;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 35px #ed9edc20;
+}
+
+h2 {
+  font: 600 32px 'Dancing Script', cursive;
+  color: #ffd5ec;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  color: #54264e;
+  background: linear-gradient(90deg, #ffd0e9, #fff0d7);
+  font: 500 15px 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ffb6e4;
+}
+
+button:hover { transform: scale(1.05); }
+
+#letter {
+  display: none;
+  line-height: 2;
+  white-space: pre-line;
+  color: #fff0fa;
+  margin-top: 25px;
+}
+
+footer {
+  padding: 25px;
+  color: #f6cce8;
+  font: 25px 'Dancing Script', cursive;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+<div class="moon"></div>
+
+<main>
+  <h1>For My Beautiful Girl ❤️</h1>
+  <p class="subtitle">A little universe made just for you ✨</p>
+
+  <div class="photo">
+    <span>Our favorite picture goes here 📸</span>
+  </div>
+
+  <section class="card">
+    <h2>To the girl who owns my heart 💗</h2>
+    <p>Every star in the sky reminds me of how special you are.</p>
+    <button onclick="showLetter()">Open your little letter 💌</button>
+
+    <div id="letter">My love,
+
+You make my world brighter just by being in it.
+I hope this little website reminds you how much you mean to me.
+
+You are my favorite person, my happiness, and my sweetest dream.
+
+I love you, always. ❤️
+
+Forever yours. 💕</div>
+  </section>
+
+  <footer>Made with all my love, just for you 🌸</footer>
+</main>
+
+<script>
+function showLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = ["💗", "💕", "🌸", "✨"][Math.floor(Math.random() * 4)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 700);
+</script>
+</body>
+</html>
+
